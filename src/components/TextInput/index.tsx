@@ -1,4 +1,4 @@
-import { useState, InputHTMLAttributes } from 'react'
+import { useState, InputHTMLAttributes, HTMLInputTypeAttribute } from 'react'
 
 import * as S from './styles'
 
@@ -9,6 +9,7 @@ export type TextFieldProps = {
   initialValue?: string
   disabled?: boolean
   error?: string
+  fieldType?: HTMLInputTypeAttribute
 } & InputHTMLAttributes<HTMLInputElement>
 
 const TextInput = ({
@@ -18,6 +19,7 @@ const TextInput = ({
   initialValue = '',
   disabled = false,
   error,
+  fieldType = 'text',
   ...props
 }: TextFieldProps) => {
   const [value, setValue] = useState(initialValue)
@@ -36,7 +38,7 @@ const TextInput = ({
         <S.Input
           onChange={handleChange}
           value={value}
-          type={'text'}
+          type={fieldType}
           disabled={disabled}
           {...props}
         />

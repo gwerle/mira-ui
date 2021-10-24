@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextField /> Renders with error 1`] = `
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #FFFFFF;
+  border-radius: 0.5rem;
+  padding: 0 1.6rem;
+  border: 0.15rem solid;
+  border-color: #EAEAEA;
+}
+
+.c4:focus-within {
+  box-shadow: 0 0 0.5rem #EAEAEA;
+}
+
+.c5 {
+  color: #030517;
+  font-family: Raleway,Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+  font-size: 1.6rem;
+  padding: 0.8rem 0;
+  background: transparent;
+  border: 0;
+  outline: none;
+  width: 100%;
+}
+
+.c2 {
+  font-size: 1.4rem;
+  color: #030517;
+}
+
+.c6 {
+  color: #FF6347;
+  font-size: 1.2rem;
+}
+
+.c0 .c3 {
+  border-color: #FF6347;
+}
+
+.c0 .c1 {
+  color: #FF6347;
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+    for="TextField"
+  >
+    TextField
+  </label>
+  <div
+    class="c3 c4"
+  >
+    <input
+      class="c5"
+      type="text"
+      value=""
+    />
+  </div>
+  <p
+    class="c6"
+  >
+    Error message
+  </p>
+</div>
+`

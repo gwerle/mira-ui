@@ -7,13 +7,18 @@ export type TextFieldProps = {
   label?: string
   labelFor?: string
   initialValue?: string
+  disabled?: boolean
+  error?: string
 } & InputHTMLAttributes<HTMLInputElement>
 
 const TextInput = ({
   onInput,
   label,
   labelFor,
-  initialValue
+  initialValue = '',
+  disabled = false,
+  error,
+  ...props
 }: TextFieldProps) => {
   const [value, setValue] = useState(initialValue)
 
@@ -25,12 +30,19 @@ const TextInput = ({
   }
 
   return (
-    <div>
+    <S.Wrapper disabled={disabled} error={!!error}>
       {!!label && <S.Label htmlFor={labelFor}>{label}</S.Label>}
       <S.InputWrapper>
-        <S.Input onChange={handleChange} value={value} type={'text'} />
+        <S.Input
+          onChange={handleChange}
+          value={value}
+          type={'text'}
+          disabled={disabled}
+          {...props}
+        />
       </S.InputWrapper>
-    </div>
+      {!!error && <S.Error>{error}</S.Error>}
+    </S.Wrapper>
   )
 }
 
